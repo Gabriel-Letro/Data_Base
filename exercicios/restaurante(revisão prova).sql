@@ -2,15 +2,6 @@ CREATE DATABASE restaurante;
 
 USE restaurante
 
-CREATE TABLE atendimento(
-	codAtendimento INT PRIMARY KEY IDENTITY(1,1),
-	situacao VARCHAR(30),
-	DtHrChegada DATE,
-	NroPessoas INT,
-	NroMesa INT FOREIGN KEY REFERENCES mesa(NroMesa),
-	CodGarcom INT FOREIGN KEY REFERENCES garcom(CodGarcom)
-)
-
 CREATE TABLE garcom(
 	CodGarcom INT PRIMARY KEY IDENTITY(1,1),
 	Nome VARCHAR(30),
@@ -28,6 +19,15 @@ CREATE TABLE produto(
 	CodPro INT PRIMARY KEY IDENTITY(1,1),
 	Descricao VARCHAR(30),
 	Preco INT
+)
+
+CREATE TABLE atendimento(
+	codAtendimento INT PRIMARY KEY IDENTITY(1,1),
+	situacao VARCHAR(30),
+	DtHrChegada DATE,
+	NroPessoas INT,
+	NroMesa INT FOREIGN KEY REFERENCES mesa(NroMesa),
+	CodGarcom INT FOREIGN KEY REFERENCES garcom(CodGarcom)
 )
 
 CREATE TABLE consumo(
