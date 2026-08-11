@@ -101,4 +101,4 @@ WHERE p.codCat IS NULL;
 --Reajustar o preço unitário dos produtos com estoque menor que 400
 UPDATE produto
 SET preco = preco + preco * 0.05
-WHERE estoque < 400;
+WHERE estoque < 400
