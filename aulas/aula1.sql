@@ -93,12 +93,12 @@ FROM produto AS P INNER JOIN categoria AS C ON P.codCat = C.codCat
 --liste as categorias que não possuem produtos vinculados a ele
 
 SELECT *
-FROM Categorias AS c
-LEFT JOIN Produtos AS p
+FROM categoria AS c
+LEFT JOIN produto AS p
     ON p.codCat = c.codCat
 WHERE p.codCat IS NULL;
 
 --Reajustar o preço unitário dos produtos com estoque menor que 400
-UPDATE Produtos
-SET precoUnit = precoUnit + precoUnit * 0.05
+UPDATE produto
+SET preco = preco + preco * 0.05
 WHERE estoque < 400;
